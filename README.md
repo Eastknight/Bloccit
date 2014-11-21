@@ -30,3 +30,5 @@ Please feel free to use a different markup language if you do not plan to run
 ## Bloccit: a Reddit clone to teach the fundamentals of web development and Rails 4.
 
 Made with my mentor at [Block](http://bloc.io)
+
+- If you want to see my app on Heroku, click [Here](https://leichen-bloccit.herokuapp.com/)
