@@ -13,7 +13,8 @@ end
 group :development do 
   gem 'sqlite3'
 end
-
+#Enable Faker
+gem 'faker'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
