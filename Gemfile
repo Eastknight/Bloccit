@@ -10,6 +10,9 @@ group :production do
   gem 'rails_12factor'
 end
 
+#Add devise as Athentication system
+gem 'devise'
+
 group :development do 
   gem 'sqlite3'
 end
