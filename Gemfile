@@ -10,6 +10,9 @@ group :production do
   gem 'rails_12factor'
 end
 
+#Deal with sensitive data
+gem 'figaro', '1.0'
+
 #Add devise as Athentication system
 gem 'devise'
 
