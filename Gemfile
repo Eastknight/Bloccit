@@ -13,6 +13,9 @@ end
 #Deal with sensitive data
 gem 'figaro', '1.0'
 
+#Add pundit to do authorizaton
+gem 'pundit'
+
 #Add devise as Athentication system
 gem 'devise'
 
