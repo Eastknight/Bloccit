@@ -19,6 +19,9 @@ gem 'pundit'
 #Add devise as Athentication system
 gem 'devise'
 
+#Add MarkDown
+gem 'redcarpet'
+
 #
 gem 'simple_form'
 
