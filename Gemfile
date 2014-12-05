@@ -19,6 +19,9 @@ gem 'pundit'
 #Add devise as Athentication system
 gem 'devise'
 
+#
+gem 'simple_form'
+
 group :development do 
   gem 'sqlite3'
 end
