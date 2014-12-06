@@ -10,6 +10,12 @@ group :production do
   gem 'rails_12factor'
 end
 
+#Use these two Gems for images uploading
+gem 'carrierwave'
+gem 'mini_magick'
+#Use Amazon's S3 as storage
+gem 'fog'
+
 #Deal with sensitive data
 gem 'figaro', '1.0'
 

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :user, only: [:update]
+  resources :users, only: [:update]
 #  resources :posts
 #  resources :topics
 # nest posts to topics
