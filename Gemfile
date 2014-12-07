@@ -16,6 +16,9 @@ gem 'mini_magick'
 #Use Amazon's S3 as storage
 gem 'fog'
 
+#Pagination
+gem 'will_paginate', '~> 3.0.6'
+
 #Deal with sensitive data
 gem 'figaro', '1.0'
 
