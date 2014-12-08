@@ -17,4 +17,12 @@ module ApplicationHelper
       content_tag :div, capture(&block), class: 'form-group'
     end
   end
+
+  def user_profile_image_url(user)
+    if user && user.avatar?
+      user.avatar.profile.url
+    else
+      "/assets/images/avatar.jpg"
+    end
+  end
 end

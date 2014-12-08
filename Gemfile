@@ -34,6 +34,12 @@ gem 'redcarpet'
 #
 gem 'simple_form'
 
+#better debug
+group :development do
+  gem 'binding_of_caller'
+  gem 'better_errors'
+end
+
 group :development do 
   gem 'sqlite3'
 end
