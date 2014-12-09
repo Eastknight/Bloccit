@@ -14,6 +14,9 @@
         <% if comment.created_at %>
           submitted <%= time_ago_in_words(comment.created_at) %> ago
         <% end %>
+        <% if policy(comment).destroy? %>
+          | <%= link_to "Delete", [@topic, @post, comment], method: :delete %>
+        <% end %>
       </small>
     </p> 
   </div>
