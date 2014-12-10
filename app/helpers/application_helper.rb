@@ -22,7 +22,7 @@ module ApplicationHelper
     if user && user.avatar?
       user.avatar.profile.url
     else
-      "/assets/images/avatar.jpg"
+      "\s\s\ss\savatar.jpg"
     end
   end
 end

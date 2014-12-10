@@ -1,9 +1,8 @@
 class CommentsController < ApplicationController
   def create
-    # Can I use @topic = @post.topic
-    @topic = Topic.find(params[:topic_id]) #Why I can access the topic id?
+    @topic = Topic.find(params[:topic_id]) 
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.new(comment_params)  #Can I use build here?
+    @comment = @post.comments.new(comment_params) 
     @comment.user_id = current_user.id
 
     if @comment.save
@@ -19,7 +18,6 @@ class CommentsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
-    #Can I use Comment.find() here?
 
     authorize @comment
     if @comment.destroy

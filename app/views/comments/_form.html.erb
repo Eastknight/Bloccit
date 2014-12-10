@@ -1,7 +1,7 @@
 <% if current_user %>
   <h4>Add a comment:</h4>
   <%= form_for [topic, post, comment] do |f| %>
-    <%= f.text_area :body, row: 2, class: 'form_control', placeholder: 'Type your comments here...' %>
+    <%= f.text_area :body, rows: 2, cols: 100,  placeholder: 'Type your comments here...' %>
     <%= f.submit "Submit" %>
   <% end %>
 <% end %>
