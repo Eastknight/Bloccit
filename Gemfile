@@ -43,6 +43,10 @@ end
 group :development do 
   gem 'sqlite3'
 end
+
+group :test do 
+  gem 'rspec-rails', '~> 3.1.0'
+end
 #Enable Faker
 gem 'faker'
 # Use SCSS for stylesheets
