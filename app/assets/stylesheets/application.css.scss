@@ -1,3 +1,4 @@
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
 .user-info {
@@ -8,6 +9,10 @@
   margin-top: 5px;
 }
 
+.vote-arrows {
+  width: 40px;
+  text-align: center;
+}
 // #comment_body {
 //   width: 200px;
 //   height: 100px;

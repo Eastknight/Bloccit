@@ -1,7 +1,9 @@
-<h1><%= markdown @post.title %></h1>
 
 <div class="row">
+  <br>
   <div class="col-md-8">
+    <%= render partial: 'votes/voter', locals: { post: @post } %>
+    <h1><%= markdown @post.title %></h1>
     <small>
       <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
       submitted <%= time_ago_in_words(@post.created_at) %> ago by
@@ -17,12 +19,20 @@
     <% if policy(@post).destroy? %>
       <%= link_to "Delete Post", [@topic, @post], method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this post?'} %>
     <% end %>
+
+    <div>
+      <h3><%= pluralize(@post.points, 'point') %></h3>
+      <small>
+        <%= pluralize(@post.up_votes, 'up vote') %>, 
+        <%= pluralize(@post.down_votes, 'down vote') %>
+      </small>
+    </div>
   </div>
 </div>
 <br>
 <div class="row">
   <div class="col-md-12">
-    <%= render partial: 'comments/form', locals: {topic: @topic, post: @post, comment: @comment } %>
+    <%= render partial: 'comments/form', locals: { post: @post, comment: @comment } %>
     <%= render partial: 'comments/comment', collection: @post.comments, as: :comment %>
   </div>
 </div>
