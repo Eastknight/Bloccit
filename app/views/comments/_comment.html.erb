@@ -1,25 +1,26 @@
-<div class="row" >
-  <div class="col-md-2" >
-    <p class="text-center">
-      <%= image_tag( user_profile_image_url(comment.user) ) %><br>
-      <small>
-        <%= comment.user.name || comment.user.email %>
-      </small>
-    </p> 
+<% content_tag :div, class: 'media', id: "comment-#{comment.id}" do %>
+  <div class="row" >
+    <div class="col-md-2" >
+      <p class="text-center">
+        <%= image_tag( user_profile_image_url(comment.user) ) %><br>
+        <small>
+          <%= comment.user.name || comment.user.email %>
+        </small>
+      </p> 
+    </div>
+    <div class="col-md-10 media-body" >
+      <p><%= simple_format(markdown comment.body) %></p>
+      <p>
+        <small>
+            submitted <%= time_ago_in_words(comment.created_at) %> ago
+          <% if policy(comment).destroy? %>
+            | <%= link_to "Delete", [@post, comment], method: :delete %>
+          <% end %>
+        </small>
+      </p> 
+    </div>
   </div>
-  <div class="col-md-10" >
-    <p><%= simple_format(markdown comment.body) %></p>
-    <p>
-      <small>
-          submitted <%= time_ago_in_words(comment.created_at) %> ago
-        <% if policy(comment).destroy? %>
-          | <%= link_to "Delete", [@post, comment], method: :delete %>
-        <% end %>
-      </small>
-    </p> 
-  </div>
-</div>
-
+<% end %>
 
 
 
