@@ -14,7 +14,6 @@ describe Comment do
     it "sends an email to users who have favorited the post" do
       @user.favorites.where(post: @post).create
 
-#What's this meaning?
       allow( FavoriteMailer )
         .to receive(:new_comment)
         .with(@user, @post, @comment)

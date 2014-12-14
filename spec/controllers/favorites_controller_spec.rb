@@ -3,7 +3,7 @@ require 'rails_helper'
 describe FavoritesController do 
 
   include TestFactories
-  include Devise::Testhelpers
+  include Devise::TestHelpers
 
   before do
     @post = associated_post
