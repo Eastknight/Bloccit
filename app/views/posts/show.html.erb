@@ -34,6 +34,6 @@
 <div class="row">
   <div class="col-md-12">
     <%= render partial: 'comments/form', locals: { post: @post, comment: @comment } %>
-    <%= render partial: 'comments/comment', collection: @post.comments, as: :comment %>
+    <%= render @comments %>
   </div>
 </div>

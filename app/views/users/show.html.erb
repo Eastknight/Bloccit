@@ -1,41 +1,35 @@
 <div class="row">
-   <div class="col-md-8">
-     <div class="media">
-       <% if @user.avatar? %>
-         <%= image_tag @user.avatar.url, class: 'pull-left' %>
-       <% end %>
-       <div class="media-body">
-         <h2 class="media-heading"><%= @user.name %></h2>
-         <small>
-           <%= pluralize(@user.posts.count, 'post') %>,
-           <%= pluralize(@user.comments.count, 'comment') %>
-         </small>
-       </div>
+ <div class="col-md-8">
+   <div class="media">
+     <% if @user.avatar? %>
+      <%= image_tag @user.avatar.url, class: 'pull-left' %>
+     <% end %>
+     <div class="media-body">
+       <h2 class="media-heading"><%= @user.name %></h2>
+       <small>
+         <%= pluralize(@user.posts.count, 'post') %>,
+         <%= pluralize(@user.comments.count, 'comment') %>
+       </small>
      </div>
    </div>
  </div>
- 
- </br>
+</div>
 
-<h2>Posts</h2>
-  <% @posts.each do |post| %>
-    <div class="media">
-      <div class="media-body">
-        <h4 class="media-heading">
-          <%= link_to (markdown post.title), [post.topic, post] %>
-        </h4>
-        <small>
-          <%= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %>
-          submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %><br/>
-          <%= post.comments.count %> Comments
-        </small>
-        <br/>
-        <%= image_tag(post.image.thumb.url) if post.image? %>
-      </div>
-    </div>
-  <% end %>
+</br>
 
-<h2>Comments</h2>
-<% @comments.each do |comment| %>
-  <%= comment.body %>
-<% end %>
+<div class="row">
+ <div class="tabbable tabs-left">
+   <ul class="nav nav-tabs">
+     <li class="active"><a href="#posts" data-toggle="tab">Posts</a></li>
+     <li><a href="#comments" data-toggle="tab">Comments</a></li>
+   </ul>
+   <div class="tab-content">
+     <div class="tab-pane active" id="posts">
+       <%= render @posts %>
+     </div>
+     <div class="tab-pane" id="comments">
+       <%= render @comments %>
+     </div>
+   </div>
+ </div>
+</div>
