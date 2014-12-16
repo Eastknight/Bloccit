@@ -3,17 +3,17 @@ Rails.application.routes.draw do
   get 'comments/create'
 
   devise_for :users
-  resources :users, only: [:update, :show]
+  resources :users, only: [:update, :show, :index]
 #  resources :posts
 #  resources :topics
 # nest posts to topics
 
   resources :topics do
-    resources :posts, except: [:index] do
+    resources :posts, except: [:index], controller: 'topics/posts' do
     end
   end
 
-  resources :post, only: [] do 
+  resources :posts, only: [:index] do 
     resources :comments, only: [:create, :destroy]
     resources :favorites, only: [:create, :destroy]
     post '/up-vote' => 'votes#up_vote', as: :up_vote
