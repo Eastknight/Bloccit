@@ -5,14 +5,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <meta name='easyData_verification' content='cebcfe18ec07b6ecbc32ac8532f201b68c315c0ee18d7cf084cb0e0b9bd1'>
+  <meta name='easyData_verification' content='74b9d6aab9806686320b014d1ffaa216195ea0a85cfcbab90e8b68f0b116'>
 </head>
 <body>
   <div class = "container">
   <ul class= "nav nav-tabs">
     <li><%= link_to "Bloccit", root_path %></li>
     <li><%= link_to "About", about_path %></li>
-    <li><%= link_to "Topics", topics_path %></li>
+    <li id='topic-tag'><%= link_to "Topics", topics_path %></li>
     <li><%= link_to "Popular", posts_path %></li>
     <li><%= link_to "Users", users_path %></li>
   
@@ -30,7 +30,7 @@
         <% end %>
       <% else %>
         <%= link_to "Sign In", new_user_session_path %> or
-        <%= link_to "Sign Up", new_user_registration_path %>
+        <%= link_to "Sign Up", new_user_registration_path, class: 'sign-up' %>
       <% end %>
     </div>
   </ul>
